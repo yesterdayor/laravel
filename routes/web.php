@@ -40,6 +40,8 @@ Route::get('index/demo', 'IndexController@demo');
 Route::prefix('index')->group(function () {
         Route::get('index', 'IndexController@index');
         Route::get('demo', 'IndexController@demo');
+        Route::get('demo2', 'IndexController@demo2');
+        Route::get('demo3', 'IndexController@demo3');
 });
 
 
@@ -63,4 +65,9 @@ Route::group(['prefix' => 'shop', 'namespace' => 'Shop'], function () {
         Route::get('index', 'GoodsController@index');
         Route::get('demo', 'GoodsController@demo');
     });
+});
+
+
+Route::get('view', function() {
+   return view('child');
 });
